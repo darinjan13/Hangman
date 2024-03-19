@@ -13,7 +13,6 @@ namespace Hangman
 {
     public partial class Form1 : Form
     {
-        SoundPlayer sounds = new SoundPlayer();
         Button[] buttons = new Button[26];
         public string[] words = { "Method", "Variable", "Class", "Array", "Loop", "Boolean", "Exception", "Interface", "Property", "Delegate" };
         private string[] descriptions = { "A function or subroutine that performs a specific task.",
@@ -81,53 +80,43 @@ namespace Hangman
             checkInput(buttonText, clickedButton);
         }
 
+        //Play sounds
         private async void playSounds(string title, int delay)
         {
+            SoundPlayer sounds = new SoundPlayer(Properties.Resources.ResourceManager.GetStream(title));
             await Task.Delay(delay);
-            sounds.SoundLocation = title;
             sounds.PlayLooping();
         }
 
         private void playGuess(string title)
         {
-            sounds.SoundLocation = title;
+            SoundPlayer sounds = new SoundPlayer(Properties.Resources.ResourceManager.GetStream(title));
             sounds.Play();
         }
 
-        private void checkInput(char letter)
+        private void displayMan(int num)
         {
-            string displayedWord = label1.Text;
-
-            if (checkIfInputAlreadyExist(letter))
-                return;
-
-            if (wordToGuess.Contains(letter))
-            {
-                correctGuess(letter, displayedWord);
-            }
-            else
-            {
-                incorrectGuess(letter);
-
-            }
-
+            string resourceName = $"{num}_Man";
+            Image dynamicImage = (Image)Properties.Resources.ResourceManager.GetObject(resourceName);
+            pictureBox1.Image = dynamicImage;
         }
+
         private void checkInput(char letter, Button clickedButton)
         {
             string displayedWord = label1.Text;
 
-            clickedButton.Enabled = false;
             if (checkIfInputAlreadyExist(letter))
                 return;
 
             if (wordToGuess.Contains(letter))
             {
+                clickedButton.Enabled = false;
                 correctGuess(letter, displayedWord);
             }
             else
             {
                 incorrectGuess(letter);
-
+                clickedButton.Enabled = false;
             }
         }
 
@@ -147,7 +136,7 @@ namespace Hangman
 
         private void correctGuess(char letter, string displayedWord)
         {
-            playGuess("correct.wav");
+            playGuess("correct");
             for (int i = 0; i < wordToGuess.Length; i++)
             {
                 if (wordToGuess[i] == letter)
@@ -161,42 +150,36 @@ namespace Hangman
             label1.Text = displayedWord.ToString();
             if (displayedWord.Replace(" ", "") == wordToGuess)
             {
-                playSounds("win.wav", 0);
+                playSounds("win", 0);
                 MessageBox.Show("Congratulations! You've guessed the word correctly.", "You Won!");
                 Application.Exit();
             }
-            playSounds("boss.wav", 1000);
-        }
-
-        private void displayMan(int num)
-        {
-            Bitmap image = new Bitmap(num + "_Man.png");
-            pictureBox1.Image = (Image)image;
+            playSounds("boss", 1000);
         }
 
         private void incorrectGuess(char letter)
         {
-            playGuess("wrong.wav");
+            playGuess("wrong");
             incorrectLetterGuessed[tries] = letter;
             tries++;
             displayMan(tries);
             if (tries == 3)
             {
-                playSounds("lose.wav", 0);
+                playSounds("lose", 0);
                 MessageBox.Show("You guessed 3 times wrong.");
                 MessageBox.Show("You Lose", "You Lost!");
                 Application.Exit();
             }
             else
             {
-                playSounds("boss.wav", 1000);
+                playSounds("boss", 1000);
                 MessageBox.Show("Incorrect Letter", "Wrong!");
             }
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-            playSounds("boss.wav", 0);
+            playSounds("boss", 0);
         }
     }
 }

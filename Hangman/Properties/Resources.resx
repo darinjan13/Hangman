@@ -118,4 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="0_Hang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\0_Hang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1_Man" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\1_Man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="2_Man" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\2_Man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3_Man" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\3_Man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Audios\boss.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="correct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Audios\correct.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Audios\lose.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="win" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Audios\win.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wrong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Audios\wrong.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

@@ -89,5 +89,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Audios\boss.wav" />
+    <Content Include="Resources\Audios\correct.wav" />
+    <Content Include="Resources\Audios\lose.wav" />
+    <Content Include="Resources\Audios\win.wav" />
+    <Content Include="Resources\Audios\wrong.wav" />
+    <Content Include="Resources\Images\0_Hang.png" />
+    <Content Include="Resources\Images\1_Man.png" />
+    <Content Include="Resources\Images\2_Man.png" />
+    <Content Include="Resources\Images\3_Man.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
