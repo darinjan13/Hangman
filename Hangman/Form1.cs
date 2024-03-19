@@ -57,6 +57,11 @@ namespace Hangman
             for (int i = 0; i < buttons.Length; i++)
             {
                 buttons[i] = new Button();
+                buttons[i].BackColor = Color.FromArgb(100, Color.White);
+                buttons[i].FlatStyle = FlatStyle.Flat;
+                buttons[i].FlatAppearance.BorderSize = 1;
+                buttons[i].FlatAppearance.MouseDownBackColor = Color.White;
+                buttons[i].FlatAppearance.MouseOverBackColor = Color.White;
                 buttons[i].Text = ((char)('A' + i)).ToString();
                 buttons[i].Click += button_click;
                 buttons[i].KeyPress += button_pressed;
@@ -179,6 +184,8 @@ namespace Hangman
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
+            label1.BackColor = Color.FromArgb(90, Color.Transparent);
+            label2.BackColor = Color.FromArgb(90, Color.Transparent);
             playSounds("boss", 0);
         }
     }

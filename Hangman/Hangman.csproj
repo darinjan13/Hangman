@@ -99,6 +99,7 @@
     <Content Include="Resources\Images\1_Man.png" />
     <Content Include="Resources\Images\2_Man.png" />
     <Content Include="Resources\Images\3_Man.png" />
+    <None Include="Resources\Images\home_background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
